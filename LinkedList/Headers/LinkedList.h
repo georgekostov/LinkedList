@@ -14,7 +14,7 @@ private:
 		int index, data;
 	}*nodePtr;
 
-	nodePtr next, current, temp, head;
+	nodePtr _next, _current, _temp, _head;
 };
 
 #endif // _LINKED_LIST_H_
