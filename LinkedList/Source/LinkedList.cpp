@@ -1,7 +1,6 @@
 #include "../Headers/LinkedList.h"
 
-LinkedList::LinkedList() 
-	: _next(NULL), 
+LinkedList::LinkedList() : 
 	_current(NULL), 
 	_temp(NULL), 
 	_head(NULL) 
@@ -11,3 +10,46 @@ LinkedList::~LinkedList() {
 
 }
 
+void LinkedList::Insert(int value) {
+	NodePtr newNode = new node;
+	newNode->data = value;
+	newNode->next = NULL;
+	
+	//if the list is empty insert first value at head with index 0
+	if (_head == NULL) {
+		newNode->index = 0;
+		_head = newNode;
+	}
+	// else there are already previous entries
+	else
+	{
+		_current = _head;
+		_temp = _head;
+
+		while (_current->next) {
+			_temp = _current;
+			_current = _current->next;
+		}
+
+		newNode->index = _current->index + 1;
+		_current->next = newNode;
+	}
+
+	newNode = NULL;
+	delete newNode;
+}
+
+void LinkedList::Print() {
+	if (_head == NULL) {
+		cout << "List is Empty..." << endl;
+	}
+	else {
+		_current = _head;
+
+		while (_current)
+		{
+			cout << "Data: " << _current->data << ", Index: " << _current->index << endl;
+			_current = _current->next;
+		}
+	}
+}

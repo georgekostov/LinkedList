@@ -11,13 +11,17 @@ public:
 	LinkedList();
 	~LinkedList();
 
+	void Insert(int value);
+	void Print();
+
 private:
 	typedef struct node
 	{
 		int index, data;
-	}*nodePtr;
+		node* next;
+	}*NodePtr;
 
-	nodePtr _next, _current, _temp, _head;
+	NodePtr _current, _temp, _head;
 };
 
 #endif // _LINKED_LIST_H_
