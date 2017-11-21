@@ -4,10 +4,12 @@ int main() {
 
 	LinkedList list;
 
-	for (int i = 0; i < 15; i++)
-	{
-		list.Insert(i * 20 - (15*i));
-	}
+	list.InsertRandomAtEnd(5, 100);
+	list.RemoveLast();
+	list.RemoveLast();
+	list.InsertIncrementalAtEnd(5);
+	list.RemoveLast();
+
 
 	list.Print();
 

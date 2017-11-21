@@ -3,16 +3,20 @@
 #ifndef _LINKED_LIST_H_
 #define _LINKED_LIST_H_
 
-#include "iostream"
+#include <iostream>
+#include <ctime>
 using namespace std;
 
 class LinkedList {
 public:
 	LinkedList();
 	~LinkedList();
-
-	void Insert(int value);
-	void Print();
+	
+	void InsertLast(int value);							//Insert at end of the list
+	void RemoveLast();									//Remove at end of the list
+	void Print();										//Print list nodes: value, index
+	void InsertIncrementalAtEnd(int numEntries);				//for debug purposes. Fills a list with incremental data.
+	void InsertRandomAtEnd(int numEntries, int maxValue);	//for debug purposes. Fills a list with random data.
 
 private:
 	typedef struct node
