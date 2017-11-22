@@ -12,10 +12,15 @@ public:
 	LinkedList();
 	~LinkedList();
 	
-	void InsertLast(int value);							//Insert at end of the list
-	void RemoveLast();									//Remove at end of the list
-	void Print();										//Print list nodes: value, index
-	void InsertIncrementalAtEnd(int numEntries);				//for debug purposes. Fills a list with incremental data.
+	void InsertLast(int value);								//Insert at end of the list
+	void InsertFirst(int value);							//Insert at start of the list
+
+	void RemoveLast();										//Remove last entry of the list
+	void RemoveFirst();										//Remove first entry of the list
+
+	void Print();											//Print list nodes: value, index
+
+	void InsertIncrementalAtEnd(int numEntries);			//for debug purposes. Fills a list with incremental data.
 	void InsertRandomAtEnd(int numEntries, int maxValue);	//for debug purposes. Fills a list with random data.
 
 private:

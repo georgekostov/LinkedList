@@ -62,6 +62,30 @@ void LinkedList::RemoveLast() {
 	}
 }
 
+void LinkedList::InsertFirst(int value) {
+	NodePtr newNode = new node;
+	newNode->data = value;
+	newNode->index = 0;
+
+	//if list is empty
+	if (_head == NULL) {
+		newNode->next = NULL;
+	}
+	else 
+	{
+		newNode->next = _head;
+		_current = _head;
+
+		while (_current)
+		{
+			_current->index = _current->index++;
+			_current = _current->next;
+		}
+	}
+
+	_head = newNode;
+}
+
 void LinkedList::Print() {
 	if (_head == NULL) {
 		cout << "List is Empty..." << endl;
